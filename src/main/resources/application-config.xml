@@ -6,11 +6,44 @@
 http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/util
 http://www.springframework.org/schema/util/spring-util.xsd">
-	<!-- Configuration d'un bean dont l'identifiant est "scanner". Il est créé à partir de la classe "java.util.Scanner" -->
-	<bean id="scanner" class="java.util.Scanner">
+
+<!-- Configuration d'un bean dont l'identifiant est "scanner". Il est créé 
+		à partir de la classe "java.util.Scanner" -->
+ 	<bean id="scanner" class="java.util.Scanner">
 		<constructor-arg>
 			<!-- Référencement du champ static "System.in" -->
 			<util:constant static-field="java.lang.System.in"></util:constant>
 		</constructor-arg>
 	</bean>
+
+	<bean id="string" class="java.lang.String">
+	</bean>	
+
+ 	
+	<bean id="dao" class="dev.dao.PlatDaoFichier">
+		<constructor-arg name="dossierStockage" ref="string" />	
+	</bean>	
+	
+<!-- version 1
+	<bean id="dao" class="dev.dao.PlatDaoMemoire">
+	</bean> 
+-->
+
+	<bean id="iplatservice" class="dev.service.PlatServiceVersion1">
+		<constructor-arg name="dao" ref="dao" />	
+	</bean>
+
+	<bean id="menu" class="dev.ihm.Menu">
+		<constructor-arg name="scanner" ref="scanner" />	
+		<constructor-arg name="service" ref="iplatservice" />	
+	</bean>
+
+
+
+
+
+
+
+
+
 </beans>
