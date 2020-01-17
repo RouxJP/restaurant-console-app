@@ -1,6 +1,7 @@
 package dev;
 
 import dev.config.AppConfig;
+import dev.config.JpaConfig;
 import dev.dao.PlatDaoFichier;
 import dev.dao.PlatDaoMemoire;
 import dev.ihm.Menu;
@@ -75,7 +76,7 @@ public class App {
        	// Implementation de Spring data
     	// Création du contexte Spring à partir d'une configuration Java
     	AnnotationConfigApplicationContext context = new
-    				AnnotationConfigApplicationContext( AppConfig.class);
+    				AnnotationConfigApplicationContext( JpaConfig.class);
     	
     	// récupération du bean Menu
     	Menu menu = context.getBean( Menu.class);
