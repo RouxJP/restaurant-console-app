@@ -15,8 +15,9 @@ import static java.util.stream.Collectors.toList;
 public class PlatDaoFichier implements IPlatDao {
 
     private String fichierStockage;
-
-    public PlatDaoFichier(String dossierStockage) {
+    
+    
+    public PlatDaoFichier( String dossierStockage) {
         this.fichierStockage = dossierStockage;
         if (!Files.exists(Paths.get(fichierStockage))) {
             try {

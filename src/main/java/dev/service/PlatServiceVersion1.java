@@ -32,7 +32,7 @@ public class PlatServiceVersion1 implements IPlatService {
             throw new PlatException("un plat doit avoir un nom de plus de 3 caractères");
         }
 
-        if (prixPlat <= 5000) {
+        if (prixPlat <= 500) {
             throw new PlatException("le prix d'un plat doit être supérieur à 5 €");
         }
 

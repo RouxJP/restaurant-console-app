@@ -38,12 +38,4 @@ http://www.springframework.org/schema/util/spring-util.xsd">
 		<constructor-arg name="service" ref="iplatservice" />	
 	</bean>
 
-
-
-
-
-
-
-
-
 </beans>

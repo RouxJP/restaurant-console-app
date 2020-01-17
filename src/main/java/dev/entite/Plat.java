@@ -4,7 +4,8 @@ import java.util.Objects;
 
 public class Plat {
 
-    private String nom;
+	private int		id;
+    private String 	nom;
     private Integer prixEnCentimesEuros;
 
     public Plat() {
@@ -15,21 +16,6 @@ public class Plat {
         this.prixEnCentimesEuros = prixEnCentimesEuros;
     }
 
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public Integer getPrixEnCentimesEuros() {
-        return prixEnCentimesEuros;
-    }
-
-    public void setPrixEnCentimesEuros(Integer prixEnCentimesEuros) {
-        this.prixEnCentimesEuros = prixEnCentimesEuros;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -43,4 +29,46 @@ public class Plat {
     public int hashCode() {
         return Objects.hash(nom);
     }
+
+	/** Getter
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/** Setter
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	/** Getter
+	 * @return the nom
+	 */
+	public String getNom() {
+		return nom;
+	}
+
+	/** Setter
+	 * @param nom the nom to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	/** Getter
+	 * @return the prixEnCentimesEuros
+	 */
+	public Integer getPrixEnCentimesEuros() {
+		return prixEnCentimesEuros;
+	}
+
+	/** Setter
+	 * @param prixEnCentimesEuros the prixEnCentimesEuros to set
+	 */
+	public void setPrixEnCentimesEuros(Integer prixEnCentimesEuros) {
+		this.prixEnCentimesEuros = prixEnCentimesEuros;
+	}
 }

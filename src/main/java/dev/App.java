@@ -7,7 +7,10 @@ import dev.ihm.Menu;
 import dev.service.PlatServiceVersion1;
 import dev.service.PlatServiceVersion2;
 
+import java.sql.SQLException;
 import java.util.Scanner;
+
+import javax.sql.DataSource;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -43,6 +46,7 @@ public class App {
     	
     	// récupération du bean Menu
     	Menu menu = context.getBean(Menu.class);
+    	
     	menu.afficher();
     	
     	// fermeture du Scanner
@@ -50,21 +54,41 @@ public class App {
     	
     	// fermeture du contexte Spring
     	context.close();
-**/  
+    	  
     	// 3ème méthode
     	// Création du contexte Spring à partir d'une configuration Java
     	AnnotationConfigApplicationContext context = new
-    	AnnotationConfigApplicationContext( AppConfig.class);
+    				AnnotationConfigApplicationContext( AppConfig.class);
     	
     	// récupération du bean Menu
-    	Menu menu = context.getBean(Menu.class);
+    	Menu menu = context.getBean( Menu.class);
+    	
     	menu.afficher();
     	
     	// fermeture du Scanner
-    	context.getBean(Scanner.class).close();
+    	context.getBean( Scanner.class).close();
+    	
+    	// fermeture du contexte Spring
+    	context.close();   	
+**/
+    	
+       	// Implementation de Spring data
+    	// Création du contexte Spring à partir d'une configuration Java
+    	AnnotationConfigApplicationContext context = new
+    				AnnotationConfigApplicationContext( AppConfig.class);
+    	
+    	// récupération du bean Menu
+    	Menu menu = context.getBean( Menu.class);
+    	
+
+    	menu.afficher();
+    	
+    	// fermeture du Scanner
+    	context.getBean( Scanner.class).close();
     	
     	// fermeture du contexte Spring
     	context.close();   	
 
+    	
     }
 }
